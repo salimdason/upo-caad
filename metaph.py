@@ -216,16 +216,11 @@ def csvWriter(extract: list, filename: str):
 if __name__ == "__main__":
     import argparse
 
-    helpText = (
-        "This script takes an output file from a metaphlan read_abundance estimation and classification level to extract from the output file.\n"
-        "Example: Python3 script.py -filename exampleOuput.txt -classification classifiedGenusandSpecies\n"
-        "Available options for classification parameter:\n"
-        "1. filteredSpecies\n"
-        "2. filteredGenus\n"
-        "3. classifiedGenusandSpecies\n"
-        "4. allUnclassified\n"
-        "Please note: So far, only option 3 has been tested and validated"
-    )
+    helpText = '''
+    Use the Metaplan4 output file and choose a classification level                                        
+                                         
+    '''
+
 
     # creating an instance of argparse.ArgumentParser
     parser = argparse.ArgumentParser(description=helpText)
@@ -235,7 +230,7 @@ if __name__ == "__main__":
         "-filename", help="metphlan output file", type=str, required=True
     )
     parser.add_argument(
-        "-classification", help="classification level", type=str, required=True
+        "-classification", help="", type=str, required=True
     )
 
     # parsing the arguments
